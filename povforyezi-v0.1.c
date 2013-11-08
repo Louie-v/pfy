@@ -101,7 +101,7 @@ void port_init(void) ///¶Ë¿Ú³õÊ¼»¯º¯Êý£¬¹²Ê¹ÓÃ19¸ö¶Ë¿
 {
     DDRB = 0xFF; ///Ê¹ÓÃPB0~5,¹²6¸ö
     DDRC = 0x00; ///Ê¹ÓÃPC0~1£¬¹²2¸ö
-    PORTC = _BV(DDC0) | _BV(DDC1) | _BV(DDC2); //ÊäÈëÉèÖÃ
+    PORTC = _BV(DDC3) | _BV(DDC4) | _BV(DDC5); //ÊäÈëÉèÖÃ
     DDRD = 0xFF; ///Ê¹ÓÃPD0~7£¬¹²8¸ö
 
     _delay_ms(300);
@@ -152,10 +152,10 @@ int main(void)
     while (1)
     {
 
-            if (!(PINC&0x01))
+            if (!(PINC&0x20))
             {
                 _delay_ms(20);
-                while (!(PINC&0x01));
+                while (!(PINC&0x20));
 
                 list++;
                 if (list > 4)
@@ -166,10 +166,10 @@ int main(void)
             }
             if (list == 1) ////////////////////ÏÔÊ¾Êý¾Ý1//////////////////////////////////////
             {
-                if (!(PINC&0x02))
+                if (!(PINC&0x08))
                 {
                     _delay_ms(20);
-                    while (!(PINC&0x02));
+                    while (!(PINC&0x08));
 
                     for (int i = 0; i < 64; i++) ////////jÏÔÊ¾Êý¾Ý³¤¶È////////////////
                     {
@@ -178,10 +178,10 @@ int main(void)
                     }
 
                 }
-                if (!(PINC&0x04))
+                if (!(PINC&0x10))
                 {
                     _delay_ms(20);
-                    while (!(PINC&0x04));
+                    while (!(PINC&0x10));
 
                     for (int i = 63; i >= 0; i--) ////////jÏÔÊ¾Êý¾Ý³¤¶È////////////////
                     {
@@ -193,10 +193,10 @@ int main(void)
             }
             if (list == 2) ////////////////////ÏÔÊ¾Êý¾Ý2//////////////////////////////////////
             {
-                if (!(PINC&0x02))
+                if (!(PINC&0x08))
                 {
                     _delay_ms(20);
-                    while (!(PINC&0x02));
+                    while (!(PINC&0x08));
 
                     for (int i = 0; i < 64; i++) ////////jÏÔÊ¾Êý¾Ý³¤¶È////////////////
                     {
@@ -205,10 +205,10 @@ int main(void)
                     }
 
                 }
-                if (!(PINC&0x04))
+                if (!(PINC&0x10))
                 {
                     _delay_ms(20);
-                    while (!(PINC&0x04));
+                    while (!(PINC&0x10));
 
                     for (int i = 63; i >= 0; i--) ////////jÏÔÊ¾Êý¾Ý³¤¶È////////////////
                     {
@@ -220,10 +220,10 @@ int main(void)
             }
             if (list == 3) ////////////////////ÏÔÊ¾Êý¾Ý3//////////////////////////////////////
             {
-                if (!(PINC&0x02))
+                if (!(PINC&0x08))
                 {
                     _delay_ms(20);
-                    while (!(PINC&0x02));
+                    while (!(PINC&0x08));
 
                     for (int i = 0; i < 64; i++) ////////jÏÔÊ¾Êý¾Ý³¤¶È////////////////
                     {
@@ -232,10 +232,10 @@ int main(void)
                     }
 
                 }
-                if (!(PINC&0x04))
+                if (!(PINC&0x10))
                 {
                     _delay_ms(20);
-                    while (!(PINC&0x04));
+                    while (!(PINC&0x10));
 
                     for (int i = 63; i >= 0; i--) ////////jÏÔÊ¾Êý¾Ý³¤¶È////////////////
                     {
